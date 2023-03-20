@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style> 
+      body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+
+.login-form button:hover {
+  background-color: #34da6b;
+}
+
+/* .image-container {
+  position: relative;
+  width: 55%;
+  height: 100%;
+  
+}
+
+.company-name {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:brown;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px #000;
+  font-family: "Arial", sans-serif;
+} 
+ h1{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #fff;
+}*/
+.login-form {
+  text-align: center;
+}
+
+.wide-input {
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
+  font-size: 19px;
+}
+
+.curvy-button {
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
+  font-size: 20px;
+}
+
+.curvy-button:hover {
+  background-color: #3e8e41;
+}
+.footer {
+  color: black;
+  padding: 5px 5px;
+  border: none;
+  border-radius:5px ;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
+  text-decoration : none;
+}
+
+.footer:hover {
+  background-color: #4CAF50;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: 80px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-logo {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+}
+
+.navbar-title {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-company-name {
+  font-size: 30px;
+  font-family: 'Arial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-company-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 10px;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: #f7b731;
+}
+.navbar-buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 20px;
+        }
+
+        .navbar-buttons a {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        }
+        .navbar-buttons a:nth-child(2){
+          color:#69C963;
+        }
+        .navbar-home-button {
+        padding: 10px 20px;
+        background-color: #69C963;
+        border-radius: 5px;
+        color: #fff;
+        }
+
+        .navbar-contact-button {
+        padding: 10px 20px;
+        border: 2px solid #69C963;
+        border-radius: 5px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+
+        <div class="navbar-title">
+            <img class = "navbar-logo" src="https://image.freepik.com/free-vector/cartoon-brain-idea-creative-design_24877-14828.jpg" alt="Company Logo">
+          <h1 class="navbar-company-name"style="text-align:center;font-size: 30px;font-family: 'Arial', sans-serif;font-family: 'Montserrat', sans-serif;">Green Grow</h1>
+        </div>
+        <div class="navbar-buttons">
+          <a href="/main" class="navbar-home-button">Home</a>
+          <a href="/terms" class="navbar-contact-button">Contact Us</a>
+        </div>
+    </nav>
+      
+    <div class="login-container">
+
+        <form class="login-form" action="/main" method="POST">
+            <h2 style="font-size: 40px;font-family: 'Arial', sans-serif;font-family: 'Montserrat', sans-serif;">Welcome</h2>
+            <input type="text" placeholder="Enter your Email Address" class="wide-input">
+            <br>
+            <input type="password" placeholder="Enter your Password" class="wide-input">
+            <br>
+            <a href="#" style="font-size: 20px;text-decoration: none;font-family: 'Montserrat', sans-serif;">Forgot Password? </a>
+            <br>
+            <br>
+            <button class="curvy-button" type="submit">Login</button>  
+          </form>
+          <br>
+      <!-- <a href="/terms" class="footer">Contact Us | Help | Terms of Use</a> -->
+    </div>
+    <!-- <div class="image-container">
+      <img src="https://image.freepik.com/free-vector/cartoon-brain-idea-creative-design_24877-14828.jpg" alt="GreenGrow Image" width =100% height =100%>
+      <h1 class="company-name">Green Grow</h1>
+    </div> -->
+  </body>
+</html>
+
+
+
+
+
+
+
+

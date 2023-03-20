@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/policies.css') }}">
+    <style>
+        body{
+          margin-top: 80px;
+        }
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        height: 80px;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        }
+
+        .navbar-logo {
+            height: 30px;
+            width: 30px;
+            margin-right: 20px;
+        }
+
+        .navbar-title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-company-name {
+        font-size: 30px;
+        font-family: 'Arial', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        }
+        .navbar-logo img {
+        height: 50px;
+        }
+
+        .navbar-company-name {
+        font-size: 24px;
+        margin: 0;
+        }
+
+        .navbar-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        }
+
+        .navbar-links li {
+        margin: 0 10px;
+        }
+
+        .navbar-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: color 0.3s;
+        }
+
+        .navbar-links li a:hover {
+        color: #f7b731;
+        }
+        .navbar-buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 20px;
+        }
+
+        .navbar-buttons a {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        }
+        .navbar-buttons a:nth-child(2){
+          color:#69C963;
+        }
+        .navbar-home-button {
+        padding: 10px 20px;
+        background-color: #69C963;
+        border-radius: 5px;
+        color: #fff;
+        }
+
+        .navbar-contact-button {
+        padding: 10px 20px;
+        border: 2px solid #69C963;
+        border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+  <nav class="navbar">
+
+    <div class="navbar-title">
+        <img class = "navbar-logo" src="https://image.freepik.com/free-vector/cartoon-brain-idea-creative-design_24877-14828.jpg" alt="Company Logo">
+      <h1 class="navbar-company-name"style="text-align:center;font-size: 30px;font-family: 'Arial', sans-serif;font-family: 'Montserrat', sans-serif;">Green Grow</h1>
+    </div>
+    <div class="navbar-buttons">
+      <a href="/main" class="navbar-home-button">Home</a>
+      <a href="/terms" class="navbar-contact-button">Contact Us</a>
+    </div>
+</nav>
+    <h2 style="color:rgb(57, 176, 85);margin-top: 100px;margin-bottom: 0 px;">Policies Initiated by Government of Andhra Pradesh State</h2>
+    <div class="container">
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/rythu bharosa.png') }}" alt="Image 1">
+          <p>Rythu Bharosa</p>
+          <p> </p>
+          <a href="https://ysrrythubharosa.ap.gov.in/RBApp/index.html" target="_blank">
+          <button>Apply</button>
+          </a>
+        </div>
+        <div class="box">
+        <img src="{{ url_for('static', filename='images/ysrbima.png') }}" alt="Image 2">
+        <p>RythuBheema</p>
+          <a href="https://ysrbima.ap.gov.in/new/SearchName.aspx" target="_blank
+          ">
+          <button>Apply</button>
+          </a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/ysr-jalakala.png') }}" alt="Image 3">
+          <p>Jala Kala </p>
+          <a href="http://ysrjalakala.ap.gov.in/YSRRB/WebHome.aspx" target="_blank
+          ">
+          <button>Apply</button>
+          </a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/market-ap.png') }}" alt="Image 4">
+          <p>Market</p>
+          <a href="https://market.ap.nic.in/" target="_blank
+          ">
+          <button>Apply</button>
+          </a>
+        </div>
+      </div>
+
+      <h2 style="color:rgb(57, 176, 85);padding-top:50px;margin-top: 0px;margin-bottom: 0 px;">Policies Initiated By Government Of India</h2>
+      <div class="container">
+
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/soilhealth.png') }}" alt="Image 1">
+          <p>Soil Health Card</p>
+          <a href="https://soilhealth.dac.gov.in/home" target="_blank">
+          <button>Apply</button>
+        </a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/6.png') }}" alt="Image 2">
+          <p>CFQC Institute</p>
+          <a href="https://cfqcti.dacnet.nic.in/" target="_blank">
+          <button>Apply</button>
+          </a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/pmfby1.jpg') }}" alt="Image 3">
+          <p>PMFBY </p>
+          <a href="https://pmfby.gov.in/" target="_blank">
+          <button>Apply</button>
+          </a>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='images/e-nam.png') }}" alt="Image 4">
+          <p>e-NAM</p>
+          <a href="https://www.enam.gov.in/web/" target="_blank">
+          <button>Apply</button>
+          </a>
+        </div>
+      </div>
+      
+</body>
+</html>   

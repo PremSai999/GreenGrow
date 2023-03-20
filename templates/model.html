@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row" style="align-items: center;
+    margin-bottom: 50px;">
+        <div class="col-lg-2" ></div>
+        <div class="col-lg-3 backshade" >
+            <img src="{{ url_for('static', filename='images/Crops/'+output['crop']+'.jpg') }}" alt="" >
+            <p>Recommended Crop :</p>
+            <p>{{output['crop']}}</p>
+        </div>
+        <div class="col-lg-2" ></div>
+        <div class="col-lg-3 backshade">
+            <img src="{{ url_for('static', filename='images/Fertilizers/'+output['fert']+'.jpg') }}" alt="" >
+            <p>Recommended Fertilizer :</p>
+            <p>{{output['fert']}}</p>
+        </div>
+        <div class="col-lg-2" ></div>
+    </div>
+
+    <div class="container">
+        <p class="headings"><b>Prediction of soil parameters</b></p>
+        <div class="row">
+            <div class="col-lg-6"> 
+                <div class="row" style="align-items: center">
+                    <div class="col-lg-1"></div>
+                    <img class="col backshade plot" src="{{ url_for('static', filename='images/barplot.png') }}" alt="No image found">
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-1 col-form-label">
+                    </div>
+                    <div class="col-lg-4">
+                        <p><b>Present</b></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p><b>Needed</b></p>
+                    </div>
+                    <div class="col-lg-3">
+                        <p><b>Soil Gradient Degradation</b></p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-1 col-form-label">
+                        <p><b>pH</b></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{ph}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{pred['ph']}}">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" value="{{deg['ph']}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-form-label">
+                        <p><b>S</b></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{s}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{pred['s']}}">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" value="{{deg['s']}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-form-label">
+                        <p><b>P</b></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{p}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{pred['p']}}">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" value="{{deg['p']}}"> 
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-lg-1 col-form-label">
+                        <p><b>K</b></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" size="10" class="form-control" value="{{k}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" value="{{pred['k']}}">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" value="{{deg['k']}}">
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+
+    <div class="container">
+        <p class="headings"><b>Soil Parameter Maps</b></p>
+        <div class="row" style="align-items: center;">
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="img1" srcset="" class="maps">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="img2" srcset="" class="maps">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/img3.jpg') }}" alt="img3" srcset="" class="maps">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='images/img4.jpg') }}" alt="img4" srcset="" class="maps">
+            </div>
+        </div> 
+    </div>
+
+    
+{% endblock %}
