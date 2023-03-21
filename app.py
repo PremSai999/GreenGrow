@@ -67,5 +67,4 @@ def tech_post():
         index = min(range(len(distances)), key=distances.__getitem__)
         return Response(data.loc[index].to_json(orient="index"), mimetype='application/json')
 
-if __name__ == "__main__":
-    app.run(port=8888,debug=False)
+app.run(port=8888,debug=False)
