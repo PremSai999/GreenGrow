@@ -1,7 +1,7 @@
 from flask import Flask, Response, redirect, render_template, request, Markup, jsonify
 import numpy as np
 import pandas as pd
-import sklearn
+# import sklearn
 from utils.map import func
 from utils.bar import bar
 from utils.deg import deg
@@ -67,4 +67,7 @@ def tech_post():
         index = min(range(len(distances)), key=distances.__getitem__)
         return Response(data.loc[index].to_json(orient="index"), mimetype='application/json')
 
-app.run(port=8888,debug=False)
+# app.run(port=8888,debug=False)
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)

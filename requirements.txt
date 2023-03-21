@@ -58,5 +58,6 @@ tornado
 traitlets
 typing_extensions
 urllib3
+waitress
 wcwidth
 Werkzeug
