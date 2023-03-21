@@ -27,14 +27,14 @@ def func():
     # Create a map centered on the mean Latitude and Longitude of the data
     map_center = [15.9129, 79.7400]
     m = folium.Map(location=map_center, zoom_start=7)
-
+# TODO : fast markers 
     # Add markers for each data point
-    for i, row in data.iterrows():
-        marker = folium.Marker(location=[row["Latitude"], row["Longitude"]],
-                            tooltip=f"{row['District']}")
-        marker.add_to(m)
-        marker.add_child(folium.Popup(f"<b>Soil Type:</b> {row['Soil type']}"))
-        marker.add_child(folium.ClickForMarker(popup="Click to add a new point"))
+    # for i, row in data.iterrows():
+    #     marker = folium.Marker(location=[row["Latitude"], row["Longitude"]],
+    #                         tooltip=f"{row['District']}")
+    #     marker.add_to(m)
+    #     marker.add_child(folium.Popup(f"<b>Soil Type:</b> {row['Soil type']}"))
+    #     marker.add_child(folium.ClickForMarker(popup="Click to add a new point"))
     folium.plugins.LocateControl().add_to(m)
     m.add_child(GetLatLngPopup())
     m.add_child(folium.plugins.MousePosition())
