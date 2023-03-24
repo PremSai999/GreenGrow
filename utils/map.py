@@ -62,10 +62,10 @@ class GetLatLngPopup(LatLngPopup):
                     success: function(response) {
                     parent.parent.document.getElementById("soil").value = response["Soil type"];
                     parent.parent.document.getElementById("ph").value = response["pH"]; 
-                    parent.parent.document.getElementById("p").value = response["Avail-P"]; 
-                    parent.parent.document.getElementById("k").value = response["Exch-K"];  
+                    parent.parent.document.getElementById("p").value = response["P"]; 
+                    parent.parent.document.getElementById("k").value = response["K"];  
                     parent.parent.document.getElementById("oc").value = response["OC"]; 
-                    parent.parent.document.getElementById("s").value = response["Avail-S"];
+                    parent.parent.document.getElementById("s").value = response["S"];
                     }
                 });
                 });

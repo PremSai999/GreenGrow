@@ -5,6 +5,7 @@ import pandas as pd
 from utils.map import func
 from utils.bar import bar
 from utils.deg import deg
+# from utils.models import crop_model
 import requests
 import config
 import pickle
@@ -14,8 +15,14 @@ import os
 data = pd.read_csv('Data/data1.csv')
 app = Flask(__name__,static_folder='static')
 
-model1 = pickle.load(open('RandomForest.pkl','rb'))
-model2 = pickle.load(open('fertilizer.pkl','rb'))
+#CropPickles
+crop1 = pickle.load(open('models/Crop1.pkl','rb'))
+crop2 = pickle.load(open('models/Crop2.pkl','rb'))
+crop3 = pickle.load(open('models/Crop3.pkl','rb'))
+fert1 = pickle.load(open('models/Fertilizer1.pkl','rb'))
+fert2 = pickle.load(open('models/Fertilizer2.pkl','rb'))
+fert3 = pickle.load(open('models/Fertilizer3.pkl','rb'))
+
 
 @ app.route('/')
 def index():
@@ -51,11 +58,15 @@ def models():
     l1 = list(map(float,l1))
     l2 = [data.loc[index]["predictions_pH"],data.loc[index]["predictions_P"],data.loc[index]["predictions_K"],data.loc[index]["predictions_S"]]
     bar(os.path.join(app.static_folder, 'images', 'barplot.png'),l1,l2)
-    pred1 = model1.predict([[request.form['p'],request.form['k'],request.form['ph']]])
-    pred2 = model2.predict([[request.form['ph'],request.form['p'],request.form['k'],request.form['s'],request.form['oc']]])
-    output = {"crop":pred1[0],"fert":pred2[0]}
+
+    input = [[request.form['ph'],request.form['p'],request.form['k'],request.form['s'],request.form['oc'],data.loc[index]["EC"]]]
+    crops = {crop1.predict(input)[0],crop2.predict(input)[0],crop3.predict(input)[0]}
+    ferts = {fert1.predict(input)[0],fert2.predict(input)[0],fert3.predict(input)[0]}
+    output = {"crop":crops,"fert":ferts}
+
     normal = {"ph":request.form['ph'],"p":request.form['p'],"s":request.form['s'],"k":request.form['k']}
     preds = {"ph":data.loc[index]["predictions_pH"],"p":data.loc[index]["predictions_P"],"s":data.loc[index]["predictions_S"],"k":data.loc[index]["predictions_K"]}
+    
     return render_template('model.html',output=output,deg=deg(normal,preds),lat=request.form['lat'],pred=preds,lng=request.form['lng'],soil=request.form['soil'],s=request.form['s'],p=request.form['p'],k=request.form['k'],ph=request.form['ph'],oc=request.form['oc'])
 
 @ app.route('/tech', methods=['POST'])
