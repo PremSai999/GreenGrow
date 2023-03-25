@@ -1,39 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p class="headings"><b>Recommended Crops :</b></p>
-    <div class="row" style="align-items: center;
-    margin-bottom: 50px;">
-        {% if output['crop']|length==1 %}
-            <div class="col-lg-5"></div>
-        {% else %}
-            <div class="col-lg-{{5-output['crop']|length}}"></div>
-        {% endif %}
-        {% for item in output['crop'] %}
-        <div class="col-lg-2 backshade" >
-            <img src="{{ url_for('static', filename='images/Crops/'+item+'.jpg') }}" alt="" >
-            <p>{{item}}</p>
-        </div>
-        <div class="col-lg-1"></div>
-        {% endfor %}
-    </div>
-    <p class="headings"><b>Recommended Fertilizers :</b></p>
-    <div class="row" style="align-items: center;
-    margin-bottom: 50px;">
-        {% if output['fert']|length==1 %}
-            <div class="col-lg-5"></div>
-        {% else %}
-            <div class="col-lg-{{5-output['fert']|length}}"></div>
-        {% endif %}
-        {% for item in output['fert'] %}
-        <div class="col-lg-2 backshade" >
-            <img src="{{ url_for('static', filename='images/Fertilizers/'+item+'.jpg') }}" alt="" >
-            <p>{{item}}</p>
-        </div>
-        <div class="col-lg-1"></div>
-        {% endfor %}
-    </div>
-
     <div class="container">
         <p class="headings"><b>Prediction of soil parameters</b></p>
         <div class="row">
@@ -75,7 +42,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-1 col-form-label">
-                        <p><b>S</b></p>
+                        <p><b>N</b></p>
                     </div>
                     <div class="col-lg-4">
                         <input type="text" class="form-control" value="{{s}}">
@@ -117,6 +84,39 @@
                 </div>
             </div>
         </div>     
+    </div>
+    <h2 style="text-align: center;">Taking into account all relevant parameters and the quality of the soil, our recommendations have been formulated.</h2>
+    <p class="headings"><b>Recommended Crops :</b></p>
+    <div class="row" style="align-items: center;
+    margin-bottom: 50px;">
+        {% if output['crop']|length==1 %}
+            <div class="col-lg-5"></div>
+        {% else %}
+            <div class="col-lg-{{5-output['crop']|length}}"></div>
+        {% endif %}
+        {% for item in output['crop'] %}
+        <div class="col-lg-2 backshade" >
+            <img src="{{ url_for('static', filename='images/Crops/'+item+'.jpg') }}" alt="" >
+            <p>{{item}}</p>
+        </div>
+        <div class="col-lg-1"></div>
+        {% endfor %}
+    </div>
+    <p class="headings"><b>Recommended Fertilizers :</b></p>
+    <div class="row" style="align-items: center;
+    margin-bottom: 50px;">
+        {% if output['fert']|length==1 %}
+            <div class="col-lg-5"></div>
+        {% else %}
+            <div class="col-lg-{{5-output['fert']|length}}"></div>
+        {% endif %}
+        {% for item in output['fert'] %}
+        <div class="col-lg-2 backshade" >
+            <img src="{{ url_for('static', filename='images/Fertilizers/'+item+'.jpg') }}" alt="" >
+            <p>{{item}}</p>
+        </div>
+        <div class="col-lg-1"></div>
+        {% endfor %}
     </div>
 
     <div class="container">
