@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_f95f669a85ea1eedccb05e60a18dd727 {
+                #map_d5c693657aca6909eb0281a0d4fc8b63 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -47,14 +47,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_f95f669a85ea1eedccb05e60a18dd727" ></div>
+            <div class="folium-map" id="map_d5c693657aca6909eb0281a0d4fc8b63" ></div>
         
 </body>
 <script>
     
     
-            var map_f95f669a85ea1eedccb05e60a18dd727 = L.map(
-                "map_f95f669a85ea1eedccb05e60a18dd727",
+            var map_d5c693657aca6909eb0281a0d4fc8b63 = L.map(
+                "map_d5c693657aca6909eb0281a0d4fc8b63",
                 {
                     center: [15.9129, 79.74],
                     crs: L.CRS.EPSG3857,
@@ -68,19 +68,19 @@
 
         
     
-            var tile_layer_6a463b0da7e4bc9ed33d8cc23d8f91f8 = L.tileLayer(
+            var tile_layer_9fc89c6d675ed82b64ad670f1095e357 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_f95f669a85ea1eedccb05e60a18dd727);
+            ).addTo(map_d5c693657aca6909eb0281a0d4fc8b63);
         
     
-            var locate_control_07515a6b88e88eb52f38a2b956ccd147 = L.control.locate(
+            var locate_control_5ae2ce577b3508b4fbcbe99ea7d52a62 = L.control.locate(
                 {}
-            ).addTo(map_f95f669a85ea1eedccb05e60a18dd727);
+            ).addTo(map_d5c693657aca6909eb0281a0d4fc8b63);
             
         
     
-                var get_lat_lng_popup_7d492ae79379bfa4f6dc6f018269e0ae = L.popup();
+                var get_lat_lng_popup_6b4c426afd0f6a7b13fe4fbf608cce03 = L.popup();
                 function latLngPop(e) {
                 parent.parent.document.getElementById("latitude").value = e.latlng.lat.toFixed(4);
                 parent.parent.document.getElementById("longitude").value = e.latlng.lng.toFixed(4); 
@@ -103,49 +103,49 @@
                     }
                 });
                 });
-                    get_lat_lng_popup_7d492ae79379bfa4f6dc6f018269e0ae
+                    get_lat_lng_popup_6b4c426afd0f6a7b13fe4fbf608cce03
                         .setLatLng(e.latlng)
                         .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
                                     "<br>Longitude: " + e.latlng.lng.toFixed(4) )
-                        .openOn(map_f95f669a85ea1eedccb05e60a18dd727);
+                        .openOn(map_d5c693657aca6909eb0281a0d4fc8b63);
                     return e.latlng.lat.toFixed(4);
                     } 
-                map_f95f669a85ea1eedccb05e60a18dd727.on('click', latLngPop);
+                map_d5c693657aca6909eb0281a0d4fc8b63.on('click', latLngPop);
             
     
-            var mouse_position_40da5c0bf2d12cca1a2d7774bb11f972 = new L.Control.MousePosition(
+            var mouse_position_754440fee84ebfbba96187497e8c8ca2 = new L.Control.MousePosition(
                 {"emptyString": "Unavailable", "lngFirst": false, "numDigits": 5, "position": "bottomright", "prefix": "", "separator": " : "}
             );
-            mouse_position_40da5c0bf2d12cca1a2d7774bb11f972.options["latFormatter"] =
+            mouse_position_754440fee84ebfbba96187497e8c8ca2.options["latFormatter"] =
                 undefined;
-            mouse_position_40da5c0bf2d12cca1a2d7774bb11f972.options["lngFormatter"] =
+            mouse_position_754440fee84ebfbba96187497e8c8ca2.options["lngFormatter"] =
                 undefined;
-            map_f95f669a85ea1eedccb05e60a18dd727.addControl(mouse_position_40da5c0bf2d12cca1a2d7774bb11f972);
+            map_d5c693657aca6909eb0281a0d4fc8b63.addControl(mouse_position_754440fee84ebfbba96187497e8c8ca2);
         
     
-            var layer_control_b318906e783d3a4493c979694ef29e1b = {
+            var layer_control_0ef410ea83bb049598d0f5e3192b9dbd = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_6a463b0da7e4bc9ed33d8cc23d8f91f8,
+                    "openstreetmap" : tile_layer_9fc89c6d675ed82b64ad670f1095e357,
                 },
                 overlays :  {
                 },
             };
             L.control.layers(
-                layer_control_b318906e783d3a4493c979694ef29e1b.base_layers,
-                layer_control_b318906e783d3a4493c979694ef29e1b.overlays,
+                layer_control_0ef410ea83bb049598d0f5e3192b9dbd.base_layers,
+                layer_control_0ef410ea83bb049598d0f5e3192b9dbd.overlays,
                 {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_f95f669a85ea1eedccb05e60a18dd727);
+            ).addTo(map_d5c693657aca6909eb0281a0d4fc8b63);
         
     
-            var measure_control_19ac17bac5a23fee69bf50a400101da4 = new L.Control.Measure(
+            var measure_control_15545ea95ea414d1b367aec4a668fdc6 = new L.Control.Measure(
                 {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
-            map_f95f669a85ea1eedccb05e60a18dd727.addControl(measure_control_19ac17bac5a23fee69bf50a400101da4);
+            map_d5c693657aca6909eb0281a0d4fc8b63.addControl(measure_control_15545ea95ea414d1b367aec4a668fdc6);
 
         
     
             L.control.fullscreen(
                 {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
-            ).addTo(map_f95f669a85ea1eedccb05e60a18dd727);
+            ).addTo(map_d5c693657aca6909eb0281a0d4fc8b63);
         
 </script>
 </html>
