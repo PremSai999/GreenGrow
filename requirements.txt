@@ -9,6 +9,7 @@ cycler
 Flask
 folium
 fonttools
+gunicorn
 idna
 itsdangerous
 Jinja2
