@@ -30,5 +30,6 @@ scipy
 six
 threadpoolctl
 tzdata
+urllib3
 waitress
 Werkzeug
